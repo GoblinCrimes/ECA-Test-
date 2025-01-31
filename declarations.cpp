@@ -18,7 +18,7 @@ void changeRuleset() //convert ruleNumber to binary as a string, then take the d
     }
     ruleNumber++;
 }
-void initializeCells()
+void initializeCells() //initializes cells[] and puts a single live cell in the middle for the first generation
 {
     std::cout << "RULE #" << ruleNumber << "\n";
     for (int i = 0; i <= cellsLength; i++)
@@ -27,7 +27,7 @@ void initializeCells()
     }
     cells[cellsLength/2] = 1; 
 }
-void drawCells()
+void drawCells() //iterates through cells to draw them with ASCII in console
 {
     for (int i = 0; i <= cellsLength; i++)
     {
@@ -35,7 +35,7 @@ void drawCells()
     }
     std::cout << "\n";
 }
-int calculateState(int a, int b, int c)
+int calculateState(int a, int b, int c) //Takes cell neighbors from calculateGeneration() and calculates the state of the next generation cell directly below 
 {
     if(a == 1 && b == 1 && c == 1) return ruleSet[0];
     if(a == 1 && b == 1 && c == 0) return ruleSet[1];
@@ -48,7 +48,7 @@ int calculateState(int a, int b, int c)
     else return 0;
 }
 
-void calculateGeneration()
+void calculateGeneration() //takes the state of a neighborhood and passes them to calculateState(), then copies states into nextCells[]
 {
     for (int i = 0; i <= cellsLength; i++)
     {
