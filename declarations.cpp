@@ -2,7 +2,7 @@
 #include "helloworld.h"
 #include <bitset>
 std::string newRuleset = {}; //holds the string of binary that represents the current ruleset
-int cellsLength = {230}; //lenght of each generation in cells, ALSO used for the amount of generations for now
+int cellsLength = {230}; //lenght of each generation in cells, ALSO used for the amount of generations for now  Sidenote: 230 is a crude approximation of the number of characters the console terminal i'm using can display at fullscreen, feel free to switch it around  
 int cells[230] = {}; //array holding the current generation of cells
 int nextCells[230] = {}; //array to temporalily hold the next generation of cells before being copied into cells[]
 int ruleNumber = {1}; //number that represents and is used to iterate through the rules SHITS ITSELF WHEN = {0}
